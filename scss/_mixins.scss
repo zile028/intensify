@@ -16,7 +16,7 @@
 @mixin btn($bgColor, $txtColor, $bgHover, $txtHover) {
     padding: 15px 50px;
     background: $bgColor;
-    font-weight: 700;
+    border: none;
     color: $txtColor;
     font-size: 1.7rem;
     font-family: $textFont;

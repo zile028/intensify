@@ -2,3 +2,116 @@
 @import "mixins";
 
 /*---- GLOBAL ----*/
+h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+h3 {
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+/*--- header ---*/
+header {
+    background: linear-gradient(rgba($white, 0.8), rgba($white, 0.8)), url(../img/header.jpg);
+    @include bgBasic;
+    height: 80vh;
+    @include flex(center, center, column);
+    text-align: center;
+    h1 {
+        color: $blue;
+        font-size: 5rem;
+    }
+    p {
+        font-size: 1.3rem;
+    }
+    button {
+        @include btn($orange, $white, $blue, $white);
+        text-transform: uppercase;
+        border-radius: 10px;
+        font-size: 0.9rem;
+        font-weight: 400;
+        letter-spacing: 1px;
+        margin-top: 30px;
+    }
+}
+
+/*--- services ---*/
+.services {
+    @include flex(space-between, center);
+    @extend .py;
+    article {
+        flex: 0 0 31%;
+        @include flex(space-between, flex-start, column);
+        &:first-child {
+            text-align: right;
+        }
+        h3 {
+            color: $blue;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+        img {
+            border-radius: 50%;
+        }
+    }
+}
+/*--- about ---*/
+.about {
+    @extend.py;
+    background: $orange;
+    text-align: center;
+    color: $white;
+    h2 + p {
+        font-style: italic;
+    }
+}
+
+/*--- post ---*/
+.post {
+    @include flex(space-between, flex-start);
+    @extend .py;
+    article {
+        flex: 0 0 31%;
+        border: 1px solid $gray;
+        border-radius: 5px;
+        overflow: hidden;
+        img {
+            object-fit: cover;
+            height: 100%;
+        }
+        div {
+            &:first-child {
+                height: 250px;
+            }
+            &:last-child {
+                padding: 30px;
+            }
+            h3 {
+                color: $blue;
+                margin-top: 0;
+            }
+            p {
+                text-align: justify;
+            }
+        }
+    }
+}
+
+/*--- footer ---*/
+footer {
+    @extend .py;
+    background-color: $blue;
+    text-align: center;
+    color: $white;
+
+    ul {
+        @include flex(space-between, center);
+        li {
+            flex: 1;
+        }
+        i {
+            color: $orange;
+        }
+    }
+}
+/*--- header ---*/

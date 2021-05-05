@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;900&family=Pacifico&display=swap");
 
 $textFont: "Montserrat", sans-serif;
-$textHeadings: $textFont;
+$textHeadings: "Pacifico", sans-serif;
 $fontSize: 16px;
 
 /* colors */
@@ -12,7 +12,12 @@ $gray: #767d85;
 
 $transition: 0.4s ease;
 $boxShadow: 0 5px 10px 0px rgba($gray, 0.5);
-$py: 80px 0;
+.py {
+    padding: 100px 0;
+    @media (max-width: 767px) {
+        padding: 50px 0;
+    }
+}
 
 // RESET STYLE
 * {
@@ -32,15 +37,17 @@ body {
     color: $gray;
 }
 
-h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-    font-family: $textHeadings;
+    font-family: $textFont;
 }
 
+h1 {
+    font-family: $textHeadings;
+}
 ul {
     list-style: none;
 }
@@ -54,7 +61,7 @@ img {
     width: 100%;
 }
 .container {
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
     @media (max-width: 767px) {
         width: 90%;
