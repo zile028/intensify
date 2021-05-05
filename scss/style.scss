@@ -17,12 +17,23 @@ header {
     height: 80vh;
     @include flex(center, center, column);
     text-align: center;
+    @media (max-width: 767px) {
+        height: 100vh;
+    }
     h1 {
         color: $blue;
         font-size: 5rem;
+        @media (max-width: 767px) {
+            font-size: 4rem;
+        }
     }
     p {
         font-size: 1.3rem;
+        margin-top: 20px;
+        @media (max-width: 767px) {
+            font-size: 1rem;
+            text-shadow: 0 0 1px $blue;
+        }
     }
     button {
         @include btn($orange, $white, $blue, $white);
@@ -40,10 +51,18 @@ header {
     @include flex(space-between, center);
     @extend .py;
     article {
-        flex: 0 0 31%;
         @include flex(space-between, flex-start, column);
+        flex: 0 0 31%;
+        @media (max-width: 767px) {
+            flex: 0 0 100%;
+            text-align: center;
+        }
         &:first-child {
             text-align: right;
+            @media (max-width: 767px) {
+                text-align: center;
+                margin-bottom: 20px;
+            }
         }
         h3 {
             color: $blue;
@@ -75,6 +94,10 @@ header {
         border: 1px solid $gray;
         border-radius: 5px;
         overflow: hidden;
+        @media (max-width: 767px) {
+            flex: 0 0 100%;
+            margin-bottom: 20px;
+        }
         img {
             object-fit: cover;
             height: 100%;
@@ -108,9 +131,14 @@ footer {
         @include flex(space-between, center);
         li {
             flex: 1;
+            @media (max-width: 767px) {
+                flex: 0 0 100%;
+                line-height: 2;
+            }
         }
         i {
             color: $orange;
+            margin-right: 5px;
         }
     }
 }
